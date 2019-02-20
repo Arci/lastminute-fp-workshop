@@ -26,6 +26,14 @@ object ScalaRecap extends SimpleTestSuite {
    */
 
   case class Person(name: String, age: Int)
+  
+  object Person {
+    def create(string: String): Person = {
+      val res = string.split(",\\s+")
+      Person(res(0), res(1).toInt)
+    }
+  }
+
   test("define case class") {
     // ignore("define a case class w/ two fields: name and age")
     val result = Person("foo", 56)
@@ -33,9 +41,9 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("define the case class's companion object") {
-    ignore("define a companion object w/ a custom factory method")
-    // val result = Person.create("foo, 56")
-    // assertEquals(result, Person("foo", 56))
+    // ignore("define a companion object w/ a custom factory method")
+    val result = Person.create("foo, 56")
+    assertEquals(result, Person("foo", 56))
   }
 
   test("case class apply") {
