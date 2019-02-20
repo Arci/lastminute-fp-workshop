@@ -25,10 +25,11 @@ object ScalaRecap extends SimpleTestSuite {
    * ADD YOUR CODE HERE INSIDE THE OBJECT
    */
 
+  case class Person(name: String, age: Int)
   test("define case class") {
-    ignore("define a case class w/ two fields: name and age")
-    // val result = Person("foo", 56)
-    // assertEquals(result, Person("foo", 56))
+    // ignore("define a case class w/ two fields: name and age")
+    val result = Person("foo", 56)
+    assertEquals(result, Person("foo", 56))
   }
 
   test("define the case class's companion object") {
