@@ -25,8 +25,10 @@ object ScalaRecap extends SimpleTestSuite {
    * ADD YOUR CODE HERE INSIDE THE OBJECT
    */
 
-  case class Person(name: String, age: Int)
-  
+  case class Person(name: String, age: Int) {
+    def apply (string: String) = s"$string, mi chiamo $name!"
+  }
+
   object Person {
     def create(string: String): Person = {
       val res = string.split(",\\s+")
@@ -47,9 +49,9 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("case class apply") {
-    ignore("add an apply function on Person class")
-    // val result = Person("foo", 56)("Ciao,")
-    // assertEquals(result, "Ciao, mi chiamo foo!")
+    // ignore("add an apply function on Person class")
+    val result = Person("foo", 56)("Ciao,")
+    assertEquals(result, "Ciao, mi chiamo foo!")
   }
 
   test("companion object apply") {
