@@ -25,16 +25,6 @@ object ScalaRecap extends SimpleTestSuite {
    * ADD YOUR CODE HERE INSIDE THE OBJECT
    */
 
-  case class Person(name: String, age: Int) {
-    def apply (string: String) = s"$string, mi chiamo $name!"
-  }
-
-  object Person {
-    def create(string: String): Person = {
-      val res = string.split(",\\s+")
-      Person(res(0), res(1).toInt)
-    }
-  }
 
   test("define case class") {
     // ignore("define a case class w/ two fields: name and age")
