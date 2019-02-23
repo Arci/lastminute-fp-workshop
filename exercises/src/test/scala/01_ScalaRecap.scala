@@ -74,10 +74,10 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("type parameter") {
-    ignore("add generic function to Person class")
-    // val p      = Person("foo", 56)
-    // val result = p.eat(Apple())
-    // assertEquals(result, "foo ate an apple")
+    // ignore("add generic function to Person class")
+    val p      = Person("foo", 56)
+    val result = p.eat(Apple())
+    assertEquals(result, "foo ate an apple")
   }
 
   test("implicit parameter") {
