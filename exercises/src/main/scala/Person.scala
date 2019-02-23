@@ -9,4 +9,6 @@ object Person {
     val tokens = value.split(",\\s+")
     Person(tokens(0), tokens(1).toInt)
   }
+
+  def apply (value: String) = create(value)
 }

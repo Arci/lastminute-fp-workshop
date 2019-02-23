@@ -45,9 +45,9 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("companion object apply") {
-    ignore("add an apply function on Person object")
-    // val result = Person("foo, 56")("Ciao,")
-    // assertEquals(result, "Ciao, mi chiamo foo!")
+    // ignore("add an apply function on Person object")
+    val result = Person("foo, 56")("Ciao,")
+    assertEquals(result, "Ciao, mi chiamo foo!")
   }
 
   test("case class update") {
