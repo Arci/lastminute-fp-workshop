@@ -58,13 +58,13 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("trait as interface") {
-    ignore("add a Fruit trait w/ two subclass Apple and Banana")
-    // assert(Apple().isInstanceOf[Fruit])
-    // assert(Banana().isInstanceOf[Fruit])
+    // ignore("add a Fruit trait w/ two subclass Apple and Banana")
+    assert(Apple().isInstanceOf[Fruit])
+    assert(Banana().isInstanceOf[Fruit])
 
-    ignore("add empty stringify function to Fruit and implement it in Apple and Banana")
-    // assertEquals(Apple().stringify, "an apple")
-    // assertEquals(Banana().stringify, "a banana")
+    // ignore("add empty stringify function to Fruit and implement it in Apple and Banana")
+    assertEquals(Apple().stringify, "an apple")
+    assertEquals(Banana().stringify, "a banana")
   }
 
   test("trait as mixin") {
