@@ -5,8 +5,7 @@ case class Person(name: String, age: Int) {
 
   def eat(fruit: Fruit) = fruit.eatenBy(name)
 
-  def makeYounger(implicit years: Int): Person =
-    Person(name, age - years)
+  def makeYounger(implicit years: Int): Person = copy(name, age - years)
 }
 
 object Person {
