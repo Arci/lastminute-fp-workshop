@@ -26,3 +26,24 @@
 
 ### Impurepics
 [https://impurepics.com/](https://impurepics.com/)
+
+# Running tests
+
+```
+$ sbt
+sbt:global> project exercises
+```
+
+## Run all tests
+
+```
+sbt:exercises> test
+```
+
+## Run single test
+
+`test:testOnly {package}.{object}`
+For example:
+```
+sbt:exercises> test:testOnly exercises.ScalaRecap
+```
