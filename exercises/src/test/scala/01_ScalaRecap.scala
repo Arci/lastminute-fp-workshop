@@ -89,10 +89,10 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("extension class") {
-    ignore("add a function to Person via implicit class extension")
-    // val p      = Person("foo", 56)
-    // val result = p.toMap
-    // assertEquals(result, Map("name" -> "foo", "age" -> "56"))
+    // ignore("add a function to Person via implicit class extension")
+    val p      = Person("foo", 56)
+    val result = p.toMap
+    assertEquals(result, Map("name" -> "foo", "age" -> "56"))
   }
 
   test("pattern match") {

@@ -15,4 +15,9 @@ object Person {
   }
 
   def apply(value: String) = create(value)
+
+  implicit class PersonMap(person: Person) {
+    def toMap(): Map[String, String] =
+      Map(("name" -> person.name), ("age" -> person.age.toString))
+  }
 }
