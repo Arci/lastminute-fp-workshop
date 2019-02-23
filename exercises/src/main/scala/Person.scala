@@ -1,7 +1,7 @@
 package exercises
 
 case class Person(name: String, age: Int) {
-  def apply (prefix: String) = s"$prefix mi chiamo $name!"
+  def apply(prefix: String) = s"$prefix mi chiamo $name!"
 
   def eat(fruit: Fruit) = s"$name ate ${fruit.stringify()}"
 }
@@ -12,5 +12,5 @@ object Person {
     Person(tokens(0), tokens(1).toInt)
   }
 
-  def apply (value: String) = create(value)
+  def apply(value: String) = create(value)
 }
