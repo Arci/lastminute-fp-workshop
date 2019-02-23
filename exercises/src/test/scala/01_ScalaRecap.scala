@@ -96,15 +96,15 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("pattern match") {
-    ignore("add a function to Person object that...")
-    ignore("...return true when name is foo")
-    ignore("...return true when name is bar")
-    ignore("...return true when age is negative")
-    ignore("...otherwise return false")
-    // import Person._
-    // assert(isFake(Person("foo", 10)))
-    // assert(isFake(Person("bar", 10)))
-    // assert(isFake(Person("matte", -10)))
-    // assert(!isFake(Person("matte", 10)))
+    // ignore("add a function to Person object that...")
+    // ignore("...return true when name is foo")
+    // ignore("...return true when name is bar")
+    // ignore("...return true when age is negative")
+    // ignore("...otherwise return false")
+     import Person._
+     assert(isFake(Person("foo", 10)))
+     assert(isFake(Person("bar", 10)))
+     assert(isFake(Person("matte", -10)))
+     assert(!isFake(Person("matte", 10)))
   }
 }
