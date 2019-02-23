@@ -4,6 +4,9 @@ case class Person(name: String, age: Int) {
   def apply(prefix: String) = s"$prefix mi chiamo $name!"
 
   def eat(fruit: Fruit) = fruit.eatenBy(name)
+
+  def makeYounger(implicit years: Int): Person =
+    Person(name, age - years)
 }
 
 object Person {

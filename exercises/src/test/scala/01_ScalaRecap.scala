@@ -81,11 +81,11 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("implicit parameter") {
-    ignore("add a function w/ an implicit parameter to the Person class")
-    // implicit val years = 30
-    // val p              = Person("foo", 56)
-    // val result         = p.makeYounger
-    // assertEquals(result.age, 26)
+    // ignore("add a function w/ an implicit parameter to the Person class")
+    implicit val years = 30
+    val p              = Person("foo", 56)
+    val result         = p.makeYounger
+    assertEquals(result.age, 26)
   }
 
   test("extension class") {
