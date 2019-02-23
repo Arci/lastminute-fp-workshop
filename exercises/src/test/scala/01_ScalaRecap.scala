@@ -51,10 +51,10 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("case class update") {
-    ignore("add 100 years to the person")
-    // val p      = Person("foo", 56)
-    // val result = p.copy(age = p.age + 100)
-    // assertEquals(result.age, 156)
+    // ignore("add 100 years to the person")
+    val p      = Person("foo", 56)
+    val result = p.copy(age = p.age + 100)
+    assertEquals(result.age, 156)
   }
 
   test("trait as interface") {
