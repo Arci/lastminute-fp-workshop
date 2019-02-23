@@ -3,7 +3,7 @@ package exercises
 case class Person(name: String, age: Int) {
   def apply(prefix: String) = s"$prefix mi chiamo $name!"
 
-  def eat(fruit: Fruit) = s"$name ate ${fruit.stringify()}"
+  def eat(fruit: Fruit) = fruit.eatenBy(name)
 }
 
 object Person {
