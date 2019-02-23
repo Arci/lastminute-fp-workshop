@@ -68,9 +68,9 @@ object ScalaRecap extends SimpleTestSuite {
   }
 
   test("trait as mixin") {
-    ignore("add function w/ default implementation to Fruit trait")
-    // assertEquals(Apple().eatenBy("foo"), "foo ate an apple")
-    // assertEquals(Banana().eatenBy("bar"), "bar ate a banana")
+    // ignore("add function w/ default implementation to Fruit trait")
+    assertEquals(Apple().eatenBy("foo"), "foo ate an apple")
+    assertEquals(Banana().eatenBy("bar"), "bar ate a banana")
   }
 
   test("type parameter") {
