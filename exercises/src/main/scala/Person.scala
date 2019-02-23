@@ -5,8 +5,8 @@ case class Person(name: String, age: Int) {
 }
 
 object Person {
-  def create(string: String): Person = {
-    val res = string.split(",\\s+")
-    Person(res(0), res(1).toInt)
+  def create(value: String): Person = {
+    val tokens = value.split(",\\s+")
+    Person(tokens(0), tokens(1).toInt)
   }
 }
