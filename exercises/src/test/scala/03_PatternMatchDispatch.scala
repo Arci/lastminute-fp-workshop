@@ -21,24 +21,34 @@ object PatternMatchDispatch extends SimpleTestSuite {
    */
 
   trait Direction {
-    def turnRight: Direction
-    def turnLeft: Direction
+    def turnRight: Direction = this match {
+      case N() => E()
+      case E() => S()
+      case W() => N()
+      case S() => W()
+    }
+    def turnLeft: Direction = this match {
+      case N() => W()
+      case E() => N()
+      case W() => S()
+      case S() => E()
+    }
   }
   case class N() extends Direction {
-    def turnRight: Direction = E()
-    def turnLeft: Direction  = W()
+    // def turnRight: Direction = E()
+    // def turnLeft: Direction  = W()
   }
   case class E() extends Direction {
-    def turnRight: Direction = S()
-    def turnLeft: Direction  = N()
+    // def turnRight: Direction = S()
+    // def turnLeft: Direction  = N()
   }
   case class W() extends Direction {
-    def turnRight: Direction = N()
-    def turnLeft: Direction  = S()
+    // def turnRight: Direction = N()
+    // def turnLeft: Direction  = S()
   }
   case class S() extends Direction {
-    def turnRight: Direction = W()
-    def turnLeft: Direction  = E()
+    // def turnRight: Direction = W()
+    // def turnLeft: Direction  = E()
   }
 
   test("turn right") {
