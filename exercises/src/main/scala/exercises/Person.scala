@@ -18,14 +18,14 @@ object Person {
 
   implicit class PersonMap(person: Person) {
     def toMap(): Map[String, String] =
-      Map(("name" -> person.name), ("age" -> person.age.toString))
+      Map("name" -> person.name, "age" -> person.age.toString)
   }
 
   def isFake(person: Person): Boolean =
     person match {
-      case Person("foo", _)            => true
-      case Person("bar", _)            => true
-      case Person(_, age) if (age < 0) => true
-      case _                           => false
+      case Person("foo", _)          => true
+      case Person("bar", _)          => true
+      case Person(_, age) if age < 0 => true
+      case _                         => false
     }
 }
