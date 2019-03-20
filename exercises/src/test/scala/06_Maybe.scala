@@ -17,20 +17,24 @@ object MaybeTests extends SimpleTestSuite {
    * TODO: remove all nulls
    */
 
+  sealed trait Maybe[+A]
+  case class Just[A](value: A) extends Maybe[A]
+  object None                  extends Maybe[Nothing]
+
   case class Qty(value: Int)
 
-  def toQty(value: String): Qty =
-    if (value.matches("^[0-9]+$")) Qty(value.toInt)
-    else null
+  def toQty(value: String): Maybe[Qty] =
+    if (value.matches("^[0-9]+$")) Just(Qty(value.toInt))
+    else None
 
   test("valid qty") {
-    assertEquals(toQty("100"), Qty(100))
+    assertEquals(toQty("100"), Just(Qty(100)))
   }
 
   test("invalid qty") {
-    assertEquals(toQty("asd"), null)
-    assertEquals(toQty("1 0 0"), null)
-    assertEquals(toQty(""), null)
-    assertEquals(toQty("-10"), null)
+    assertEquals(toQty("asd"), None)
+    assertEquals(toQty("1 0 0"), None)
+    assertEquals(toQty(""), None)
+    assertEquals(toQty("-10"), None)
   }
 }
