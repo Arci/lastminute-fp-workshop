@@ -53,8 +53,24 @@ object TypeclassIntroTests extends SimpleTestSuite {
 
     case class Box[A](value: A)
 
-    def sum[A](a: Box[A], b: Box[A]): Box[A] =
-      ???
+    def sum[A](a: Box[A], b: Box[A])(implicit c: Combinator[A]): Box[A] =
+      Box(c.combine(a.value, b.value))
+
+    trait Combinator[A] {
+      def combine(a: A, b: A): A
+    }
+
+    implicit val intCombine = new  Combinator[Int] {
+      override def combine(a: Int, b: Int): Int =  a + b
+    }
+
+    implicit val stringCombine = new  Combinator[String] {
+      override def combine(a: String, b: String): String = a + b
+    }
+
+    implicit class IntOps(a: Int) {
+      def combine(b: Int)(implicit c: Combinator[Int]): Int = c.combine(a, b )
+    }
   }
 
   test("create boxes - polymorphic") {
@@ -67,7 +83,7 @@ object TypeclassIntroTests extends SimpleTestSuite {
   test("sum boxes - polymorphic") {
     import Polymorphic._
 
-    ignore("implements sum[A] function")
+    // ignore("implements sum[A] function")
 
     assertEquals(sum(Box(42), Box(100)).value, 142)
     assertEquals(sum(Box("foo"), Box("bar")).value, "foobar")
